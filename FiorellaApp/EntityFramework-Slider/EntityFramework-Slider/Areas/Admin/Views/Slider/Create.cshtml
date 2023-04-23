@@ -1,0 +1,21 @@
+﻿@model Slider
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container my-5">
+
+    <form class="form-sample" asp-action="Create" method="post" enctype="multipart/form-data">      @*Bunu qeyd edirikki biz  IformFile ile  hansisa bir propertini classin ichine qoyduqda, input onu verdikde ,  form submit olanda onu fayl formatinda gonderecek*@
+
+        <input class="form-control" id="customFile" asp-for="Photo"/> @* // Image propertisinin evezine IFormFile-daki Photonu yaziriq. Photonu goturuuruk onun icherisinden adini goturub bazaya yaziriq. sonra goturduyumuz photonun ozunu fayl weklinde lokalimiza yaziriq*@
+        <span class="text-danger" asp-validation-for="Photo"></span>   @*asp-validation-for error mesajlarini yazdirmaq uchundur. hanso inputun altinda istesen ponun adina uygun yaziriq*@
+        
+        <div class="buttons my-3">
+           <button type="submit" class="btn btn-primary mr-2">Submit</button>
+           <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+       
+    </form>
+</div>
+

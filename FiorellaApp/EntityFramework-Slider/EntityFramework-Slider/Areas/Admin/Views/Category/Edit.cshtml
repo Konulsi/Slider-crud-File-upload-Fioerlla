@@ -1,0 +1,28 @@
+﻿@model Category
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container my-5">
+    <span class="text-danger">@ViewBag.error</span>
+    <form class="form-sample" asp-action="Edit" method="post" >
+        <input type="text" class="form-control" id="customFile" asp-for="Name"/>   @*Bu asp-for name Category nin ichinde olan name propertisidi*@
+
+        <span class="text-danger" asp-validation-for="Name"></span>  @*bu span inputun altinda errorun yazilmasi uchundur. Name inputunun yaninda*@
+        @*span name e ne validation elesek gelib onu spanin ichinde yazdiracaq*@
+        <div class="buttons my-3">
+           <button type="submit" class="btn btn-primary mr-2">Submit</button>
+           <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    @*validationlari chixartmaq uchun linkleri aparib validation partialin ichine qoyuruq*@
+}
+
+
